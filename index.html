@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugene Kyle M. Feliscuzo - Executive Resume</title>
+    <style>
+        :root {
+            /* Professional Executive Color Palette */
+            --bg-body: #f8fafc;
+            --bg-container: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent-color: #1e40af; /* Deep Executive Navy */
+            --accent-subtle: #eff6ff;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --transition: all 0.25s ease;
+        }
+
+        [data-theme="dark"] {
+            /* Clean Dark Mode Executive Option */
+            --bg-body: #0f172a;
+            --bg-container: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6; /* Electric Corporate Blue */
+            --accent-subtle: #1e3a8a;
+            --border-color: #334155;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-secondary);
+            background-color: var(--bg-body);
+            line-height: 1.5;
+            padding: 3rem 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Floating Action Buttons Container */
+        .controls {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+        .btn-action {
+            background: var(--bg-container);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        /* Standard Aspect Ratio Frame */
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-container);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        /* Executive Header Block */
+        header {
+            padding: 3rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .profile-frame {
+            flex-shrink: 0;
+        }
+
+        /* Image sizing expanded to 160px with a refined double frame border */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            padding: 4px;
+            background: var(--bg-container);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .header-main {
+            flex-grow: 1;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .title-sub {
+            font-size: 1.15rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .major-sub {
+            font-size: 0.95rem;
+            margin-bottom: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .meta-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .meta-contacts a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .meta-contacts a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Two Column Content Split */
+        .resume-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+
+        .sidebar {
+            padding: 2.5rem 2rem 2.5rem 3rem;
+            border-right: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.01);
+        }
+
+        .main-column {
+            padding: 2.5rem 3rem 2.5rem 2.5rem;
+        }
+
+        /* Clean Structural Typography */
+        section {
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .summary-block {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Work & Education Items layout */
+        .experience-node {
+            margin-bottom: 1.5rem;
+        }
+
+        .node-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+        }
+
+        .node-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .node-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .node-org {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.bullets-list {
+            list-style-type: square;
+            margin-left: 1.15rem;
+        }
+
+        ul.bullets-list li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.35rem;
+        }
+
+        /* Sidebar Competencies Blocks */
+        .skill-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-group strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-group p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Print optimization overrides */
+        @media print {
+            body { padding: 0; background: #fff; color: #000; }
+            .controls { display: none !important; }
+            .resume-container { box-shadow: none; border: none; }
+            .profile-img { border-color: #000; }
+        }
+
+        /* Responsive Flow */
+        @media (max-width: 768px) {
+            header { flex-direction: column; align-items: flex-start; padding: 2rem; gap: 1.5rem; }
+            .profile-img { width: 140px; height: 140px; }
+            .resume-body { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border-color); padding: 2rem; }
+            .main-column { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Document Control Panel -->
+<div class="controls">
+    <button class="btn-action" id="themeToggler" title="Toggle color mode">🌓</button>
+    <button class="btn-action" onclick="window.print()" title="Print / Export PDF">🖨️</button>
+</div>
+
+<div class="resume-container">
+    <header>
+        <!-- PROFILE IMAGE NODE -->
+        <div class="profile-frame">
+            <img class="profile-img" src="profile.png" alt="Identity Portrait">
+        </div>
+
+        <div class="header-main">
+            <h1>Eugene Kyle M. Feliscuzo</h1>
+            <div class="title-sub">Information Technology Student</div>
+            <div class="major-sub">Major in Network Administration</div>
+            
+            <div class="meta-contacts">
+                <span>📍 Angeles City, Philippines</span>
+                <span>📞 +63 918 280 7940</span>
+                <span>✉️ <a href="eugenekylefeliscuzo@gmail.com">eugenekylefeliscuzo@gmail.com</a></span>
+                <span>🔗 <a href="https://github.com/Kylezxcz" target="_blank">https://github.com/Kylezxcz</a></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="resume-body">
+        <!-- LEFT COLUMN: Key Core Details -->
+        <aside class="sidebar">
+            <section>
+                <h2>Contact Profile</h2>
+                <div class="skill-group">
+                    <strong>Location</strong>
+                    <p>Pampanga, PH</p>
+                </div>
+                <div class="skill-group">
+                    <strong>Availability</strong>
+                    <p>Internships & Full-Time Roles</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Core Skills</h2>
+                <div class="skill-group">
+                    <strong>Networking Protocols</strong>
+                    <p>WireGuard, OpenVPN, IPSec, SoftEther, ZeroTier, Path Routing Optimization</p>
+                </div>
+                <div class="skill-group">
+                    <strong>System Admin</strong>
+                    <p>Ubuntu Server, Linux CLI, Infrastructure Automation</p>
+                </div>
+                <div class="skill-group">
+                    <strong>Containerization</strong>
+                    <p>Docker Engine, Microservices Management</p>
+                </div>
+                <div class="skill-group">
+                    <strong>Front-End / Design</strong>
+                    <p>HTML5, CSS3, UI/UX Wireframing & App Mockups</p>
+                </div>
+            </section>
+        </aside>
+
+        <!-- RIGHT COLUMN: Professional Records & Development -->
+        <main class="main-column">
+            <section id="profile-summary">
+                <h2>Professional Summary</h2>
+                <p class="summary-block">
+                    Detail-oriented and passionate Information Technology student specializing in Network Administration. Experienced in building automated architectures, managing containerized infrastructure components, and deploying resilient gateway frameworks. Demonstrates practical skills in system orchestration and multi-department secure network layouts.
+                </p>
+            </section>
+
+            <section id="academic-history">
+                <h2>Education</h2>
+                <div class="experience-node">
+                    <div class="node-row">
+                        <span class="node-title">Bachelor of Science in Information Technology</span>
+                        <span class="node-date">2023 — Present</span>
+                    </div>
+                    <div class="node-org">Systems Plus College Foundation</div>
+                    <ul class="bullets-list">
+                        <li>Specialization track focus in Network Administration frameworks.</li>
+                        <li>Relevant Modules: Advanced System Infrastructures, Network Security Protocols, Distributed Architecture.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="technical-projects">
+                <h2>Key Technical Projects</h2>
+                <div class="experience-node">
+                    <div class="node-row">
+                        <span class="node-title">Adaptive VPN Gateway Architecture</span>
+                        <span class="node-date">Jan 2026 — Present</span>
+                    </div>
+                    <div class="node-org">Capstone Principal Developer</div>
+                    <ul class="bullets-list">
+                        <li>Engineered a centralized network gateway structured explicitly for segmented corporate multi-department organizational layers.</li>
+                        <li>Implemented dynamic tracking modules to evaluate path performance shifts and re-route metrics smoothly.</li>
+                        <li>Deployed robust validation models utilizing specialized cryptographic tunnels.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="work-experience">
+                <h2>Undergrad Experience</h2>
+                <div class="experience-node">
+                    <div class="node-row">
+                        <span class="node-title">Student Assistant</span>
+                        <span class="node-date">2025 — 2026</span>
+                    </div>
+                    <div class="node-org">Office of the Dean</div>
+                    <ul class="bullets-list">
+                        <li>Maintained standard operations across departmental endpoint terminals and hardware inventories.</li>
+                        <li>Managed administrative tasks, processed data archives, and streamlined internal operations.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script>
+    // System Theme Management
+    const themeToggler = document.getElementById('themeToggler');
+    themeToggler.addEventListener('click', () => {
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.body.removeAttribute('data-theme');
+        } else {
+            document.body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
+
+</body>
+</html>
